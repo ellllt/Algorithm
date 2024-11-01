@@ -15,6 +15,7 @@ int main() {
     for (int j = 0; j < k; j++) {
       int a;
       cin >> a; 
+      a--;
       s[i].push_back(a);
     }
   }
@@ -22,15 +23,15 @@ int main() {
   vector<int> p(M);
   for (int i = 0; i < M; i++) cin >> p[i];
 
-  long long res - 0;
+  long long res = 0;
   for (int bit = 0; bit < (1<<N); bit++) {
     bool is_ok = true;
-    for (int i = 0; i < M; int++) {
+    for (int i = 0; i < M; i++) {
       int count = 0;
       for (auto v : s[i]) {
         if (bit & (1<<v)) count++;
       }
-      if (con % 2 != p[i]) is_ok = false;
+      if (count % 2 != p[i]) is_ok = false;
     }
     if (is_ok) res++;
   }
